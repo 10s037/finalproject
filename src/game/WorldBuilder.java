@@ -73,18 +73,24 @@ public class WorldBuilder {
 		for (int z = 0; z < depth; z++){
 			for (int x = 0; x < width; x++){
 				for (int y = 0; y < height; y++){
-					if (tiles[x][y][z] != Tile.WALL && regions[x][y][z] == 0){
-						int size = fillRegion(nextRegion++, x, y, z);
-						
-						if (size < 25)
-							removeRegion(nextRegion - 1, z);
-					}
+					helperMethod(x,y,z,regions);
 				}
 			}
 		}
 		return this;
 	}
-	
+
+	//helper method
+    private void helperMethod(int x, int y, int z, int regions[][][]){
+        if (tiles[x][y][z] != Tile.WALL && regions[x][y][z] == 0){
+            int size = fillRegion(nextRegion++, x, y, z);
+
+            if (size < 25)
+                removeRegion(nextRegion - 1, z);
+        }
+        }
+
+
 	private void removeRegion(int region, int z){
 		for (int x = 0; x < width; x++){
 			for (int y = 0; y < height; y++){
