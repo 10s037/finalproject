@@ -13,7 +13,7 @@ public class Effect {
 		this.duration = other.duration; 
 	}
 	
-	public void update(Creature creature){
+	public void update(){
 		duration--;
 	}
 	
