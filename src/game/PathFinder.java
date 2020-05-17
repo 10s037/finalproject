@@ -58,7 +58,7 @@ public class PathFinder {
             else
                 checkNeighbors(creature, end, closest);
         }
-        return null;
+        return new ArrayList<Point>();
     }
 
 	private Point getClosestPoint(Point end) {
@@ -78,7 +78,7 @@ public class PathFinder {
 		        continue;
 			
 		    if (open.contains(neighbor))
-				reParentNeighborIfNecessary(closest, neighbor);
+		    	reParentNeighborIfNecessary(closest, neighbor);
 		    else
 		        reParentNeighbor(closest, neighbor);
 		}
