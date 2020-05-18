@@ -222,7 +222,7 @@ public class StuffFactory {
 				creature.doAction(item, "look a little better");
 			}
 			
-			public void update(Creature creature){
+			public void update(EffectTest creature){
 				super.update(creature);
 				creature.modifyHp(1, "Killed by a slow health potion?");
 			}
@@ -240,7 +240,7 @@ public class StuffFactory {
 				creature.doAction(item, "look sick");
 			}
 			
-			public void update(Creature creature){
+			public void update(EffectTest creature){
 				super.update(creature);
 				creature.modifyHp(-1, "Died of poison.");
 			}
@@ -339,7 +339,7 @@ public class StuffFactory {
 		});
 		
 		item.addWrittenSpell("slow heal", 12, new Effect(50){
-			public void update(Creature creature){
+			public void update(EffectTest creature){
 				super.update(creature);
 				creature.modifyHp(2, "Killed by a slow heal spell?");
 			}
@@ -354,7 +354,7 @@ public class StuffFactory {
 				creature.modifyRegenManaPer1000(-10);
 				creature.doAction("seem to glow with inner strength");
 			}
-			public void update(Creature creature){
+			public void update(EffectTest creature){
 				super.update(creature);
 				if (Math.random() < 0.25)
 					creature.modifyHp(1, "Killed by inner strength spell?");

@@ -205,6 +205,8 @@ public class PlayScreen implements Screen {
 		return this;
 	}
 
+
+
 	private boolean userIsTryingToExit(){
 		return player.z == 0 && world.tile(player.x, player.y, player.z) == Tile.STAIRS_UP;
 	}

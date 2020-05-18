@@ -5,11 +5,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class Point {
-	public staint getX() {
+	public int getX() {
 		return x;
 	}
 
-	int x;
+	public int x;
 	public int y;
 	public int z;
 	
